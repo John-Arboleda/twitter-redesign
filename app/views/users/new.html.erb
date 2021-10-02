@@ -1,0 +1,33 @@
+<div class="my-5 d-flex justify-content-center">
+
+<div class="px-3 py-4 bg-dark border rounded-3">
+
+<h2 class="text-center text-primary">Sign up</h2>
+
+<div class="">
+<%= form_for(@user, ) do |f| %>
+
+  <div class="form-group">
+    <%= f.text_field :username, autocomplete: "username", class: "form-control", placeholder: "Username" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_field :fullname, autocomplete: "Enter full name", class: "form-control", placeholder: "Full name" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :photo, "Attach your profile photo", class: "text-primary" %>
+    <%= f.file_field :photo, class: "form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :cover_image, "Attach your cover image", class: "text-primary" %>
+    <%= f.file_field :cover_image, class: "form-control"  %>
+  </div>
+
+  <%= f.submit "Sign up", class: "btn btn-primary" %>
+<% end %>
+</div>
+
+</div>
+</div>
