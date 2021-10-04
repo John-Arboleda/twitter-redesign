@@ -12,7 +12,7 @@ module ApplicationHelper
     end
   end
 
-  def cover_pic(user)
+  def cover_pic(user, size = '')
   	if user.cover_image.present?
       image_tag(user.cover_image.to_s, alt: user.username, class: 'pr-2')
     else
