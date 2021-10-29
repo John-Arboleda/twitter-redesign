@@ -100,3 +100,13 @@ body {
   }
 
 }
+
+.follow-content {
+  width: 100%;
+}
+
+.who-to-follow {
+  .follow-content {
+    line-height: 1rem;
+  }
+}

@@ -16,9 +16,21 @@
   </head>
 
   <body>
-    <%= after_login('layouts/navbar') %>
+    <div class="container-fluid">
+      <div class="row">
+      <%= after_login('shared/navbar') %>
+      <div class="col offset-2 mt-5" id="main">
+        <div class="row">
+          <div class="col-7 pr-5 "> 
+            <%= yield %>
+          </div>
+            <%= after_login('shared/right')%>
+        </div>
+      </div> 
+      </div>
+    </div>
+
       <p class="flash bg-success"><%= flash.notice %></p>
       <p class="flash bg-success"><%= flash.alert %></p>
-    <%= yield %>
   </body>
 </html>
