@@ -8,13 +8,13 @@ module ApplicationHelper
       image_tag(usr.photo.to_s, alt: usr.username, class: "pr-2 rounded-circle profile-img #{size}")
     else
       image_tag('https://source.unsplash.com/random/60x60',
-                alt: "usr.username", class: 'pr-2 rounded-circle')
+                alt: "usr.username", class: 'pr-2 rounded-circle profile-img')
     end
   end
 
   def cover_pic(usr)
   	if usr.cover_image.present?
-      image_tag(usr.cover_image.to_s, alt: usr.username, class: 'pr-2')
+      image_tag(usr.cover_image.to_s, alt: usr.username)
     else
       image_tag('https://source.unsplash.com/random/700x250', alt: usr.username, class: 'pr-2')
     end
