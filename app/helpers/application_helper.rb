@@ -5,10 +5,10 @@ module ApplicationHelper
 
   def profile_pic(usr, size = '')
   	if usr.photo.present?
-      image_tag(usr.photo.to_s, alt: usr.username, class: "pr-2")
+      image_tag(usr.photo.to_s, alt: usr.username, class: "pr-2 rounded-circle profile-img #{size}")
     else
       image_tag('https://source.unsplash.com/random/60x60',
-                alt: "usr.username", class: 'pr-2')
+                alt: "usr.username", class: 'pr-2 rounded-circle')
     end
   end
 
@@ -21,9 +21,10 @@ module ApplicationHelper
   end
 
   def different_path_partial
-  	if logged_in?
-  	  render partial: 'shared/right' if params[:action] == 'index'
-      render partial: 'shared/profile_right' if params[:action] == 'show'
+  	if logged_in? && params[:action] == 'index'
+      render partial: 'shared/right'
+    elsif params[:action] == 'show'
+      render partial: 'shared/profile_right'
     end
   end
 end
