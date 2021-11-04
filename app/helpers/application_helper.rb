@@ -4,12 +4,12 @@ module ApplicationHelper
   end
 
   def profile_pic(usr, size = '')
-  	# if usr.photo.present?
-      #image_tag(usr.photo.to_s, alt: usr.username, class: "pr-2")
-    #else
+  	if usr.photo.present?
+      image_tag(usr.photo.to_s, alt: usr.username, class: "pr-2")
+    else
       image_tag('https://source.unsplash.com/random/60x60',
                 alt: "usr.username", class: 'pr-2')
-    #end
+    end
   end
 
   def cover_pic(usr)
