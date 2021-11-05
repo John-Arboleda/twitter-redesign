@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :follows, through: :followings, source: :followed
   has_many :inverse_followings, class_name: 'Following', foreign_key: 'followed_id'
   has_many :followers, through: :inverse_followings, source: :follower
+  has_many :comments, dependent: :destroy
 
   def who_to_follow
       User.where.not(id: id).where.not(id: follows).order('created_at DESC')
