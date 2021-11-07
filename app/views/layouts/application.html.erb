@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Twitter Redesign</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Twitter Redesign</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-    />
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+  />
+</head>
 
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-      <%= after_login('shared/navbar') %>
-      <div class="col offset-2 mt-5" id="main">
-        <div class="row">
-          <div class="col-7 bg-light">
-            <%= yield %>
-          </div>
-            <%= different_path_partial %>
+<body class="bg-light">
+  
+  <div class="row no-gutters">
+    <div class="col-2">
+      <%= after_login('shared/left') %>
+    </div>
+    <div class="col-10">
+      <div class="row no-gutters">
+        <%= after_login('shared/navbar') %>
+      </div>
+      <div class="row no-gutters vh-100">
+        <div class="col-9">
+          <%= yield %>
         </div>
-      </div> 
+        <div class="col-3 border-left">
+          <%= different_path_partial %>
+        </div>
       </div>
     </div>
+  </div>
 
-      <p class="flash bg-success"><%= flash.notice %></p>
-      <p class="flash bg-success"><%= flash.alert %></p>
-  </body>
+  <p class="flash bg-success"><%= flash.notice %></p>
+  <p class="flash bg-success"><%= flash.alert %></p>
+</body>
 </html>

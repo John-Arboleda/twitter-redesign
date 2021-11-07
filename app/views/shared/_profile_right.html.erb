@@ -1,4 +1,4 @@
-<div class="col-3 offset-7 border-left px-1 bg-light position-fixed pt-3 py-4">
+<div class="border-left px-1 bg-light position-fixed pt-3 py-4">
 <div class="text-center mb-2">
   <%= follow_me(@user, 'shared/follow') %>
   <%= profile_pic(@user, 'tweet-pic')%>
@@ -50,7 +50,7 @@
 <% @user.follows.each do |follow| %>
   <div class="d-flex flex-row flex-wrap align-items-center mt-3 mb-4 who-to-follow">
     <div class="author">
-        <%= profile_pic(follow, 'tweet-pic')%>
+      <%= profile_pic(follow, 'tweet-pic')%>
     </div>
     <div class="follow-content d-flex flex-wrap flex-row justify-content-between">
       <h6>

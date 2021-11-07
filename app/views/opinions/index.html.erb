@@ -1,24 +1,23 @@
-<div class="row">
-<div class="col-12">
-<nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
-	<div class="container">
-		<%= link_to 'Tweet', '#', class: "navbar-brand active  border-bottom border-primary" %>
-		<ul class="navbar-nav mr-auto">
-		<li class="nav-item">
-			<%= link_to 'Videos', '#', class: "nav-link" %>
-		</li>
-		<li class="nav-item">
-			<%= link_to 'Photos', '#', class: "nav-link" %>
-		</li>
-		</ul>
-	</div>
-</nav>
-</div>
+<div class="d-flex flex-column">
+<div>
+	<nav class="navbar navbar-expand-lg navbar-light sticky-top border-bottom">
+		<div class="container">
+			<%= link_to 'Tweet', '#', class: "navbar-brand active" %>
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<%= link_to 'Videos', '#', class: "nav-link" %>
+			</li>
+			<li class="nav-item">
+				<%= link_to 'Photos', '#', class: "nav-link" %>
+			</li>
+			</ul>
+		</div>
+	</nav>
 </div>
 
-<h3 class="mt-4"> Suggest Media content </h3>
+<h3 class="mt-4 px-3"> Suggest Media content </h3>
 
-<div class="card mb-5">
+<div class="card mb-5 mx-3">
 <div class="card-body">
 	<%= form_for(@opinion, url: opinion_path) do |f| %>
 	<%= f.text_field :text, autofocus: true, class: "form-control", placeholder: "Suggest content by tweet ..." %>
@@ -26,9 +25,11 @@
 </div>
 </div>
 
-<div class="card">
-	<div class="card-body">
-		<h5 class="card-title border-bottom pb-3">Suggested Content</h5>
-		<% render @opinions %>
-	</div>
+<div class="card mx-3">
+<div class="card-body">
+	<h5 class="card-title border-bottom pb-3">Suggested Content</h5>
+	<% render @opinions %>
+</div>
+</div>
+
 </div>
