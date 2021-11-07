@@ -1,4 +1,4 @@
-<div class="border-left px-1 bg-light position-fixed pt-3 py-4">
+<div class="border-left px-1 position-fixed follow-content py-4">
 <div class="text-center mb-2">
   <%= follow_me(@user, 'shared/follow') %>
   <%= profile_pic(@user, 'tweet-pic')%>
@@ -16,53 +16,23 @@
   </div>
 </div>
 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Followed by</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Following</a>
-  </li>
-</ul>
+<h6 class="border-bottom py-3 pl-2">FOLLOWED BY</h6>
 
-<div class="tab-content" id="myTabContent">
-<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
+<div>
 <% @user.followers.each do |follower| %>
-  <div class="d-flex flex-row flex-wrap align-items-center mb-2 mt-2 who-to-follow justify-content-around">
-    <div class="author">
-      <%= profile_pic(follower, 'tweet-pic')%>
+    <div class="d-flex flex-row flex-wrap align-items-center mb-2 mt-2 who-to-follow justify-content-around">
+      <div class="author">
+        <%= profile_pic(follower, 'tweet-pic')%>
+      </div>
+      <div>
+        <h6><strong>
+          <%= link_to follower.fullname, profile_path(follower.username), class: "text-dark" %></strong><br>
+          <small class="text-gray">@<%= follower.username %></small>
+        </h6>
+        <%= follow_me(@user, 'shared/follow') %>
+      </div>
     </div>
-    <div>
-      <h6><strong>
-        <%= link_to follower.fullname, profile_path(follower.username), class: "text-dark" %></strong><br>
-        <small class="text-gray">@<%= follower.username %></small>
-      </h6>
-      <%= follow_me(@user, 'shared/follow') %>
-    </div>
-  </div>
-<% end %>
-
-</div>
-    
-<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-<% @user.follows.each do |follow| %>
-  <div class="d-flex flex-row flex-wrap align-items-center mt-3 mb-4 who-to-follow">
-    <div class="author">
-      <%= profile_pic(follow, 'tweet-pic')%>
-    </div>
-    <div class="follow-content d-flex flex-wrap flex-row justify-content-between">
-      <h6>
-      <strong><%= link_to follow.fullname, profile_path(follow.username), class: "text-dark" %></strong>
-      <br>
-      <small class="text-gray">@<%= follow.username %></small>
-      </h6>
-      <%= follow_me(@user, 'shared/follow') %>
-    </div>
-  </div>
-<% end %>
-
+  <% end %>
 </div>
 </div>
 

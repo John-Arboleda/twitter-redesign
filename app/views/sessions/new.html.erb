@@ -1,21 +1,27 @@
 <div class="container">
-	<div class="row">
-		<%= render 'shared/front' %>
-	  <div class="col-sm-12 col-md-6">
-		<h1 class="text-center">Sign in</h1>
-
-<%= form_for(:session, url: sign_in_path) do |f| %>
-  <div class="form-group">
-     <%= f.text_field :username, autofocus: true, placeholder: "Enter a username", class: "form-control"  %>
- </div>
-
- <div class="actions">
-    <%= f.submit 'Login', class: "btn btn-primary" %>
-    <p>
-			<small><em>Don't have an account?</em></small> <%= link_to 'Signup', new_user_path %>
-    </p>
+<div class="text-center text-primary py-3">
+	<h4 >Media Fanatics</h4>
+	<h1 class="text-center"><i class="fas fa-dice-d20 fa-2x text-primary"></i></h1>
+	<p class="text-center text-primary">A community for fans of all types of media, movies, games, etc.</p>
+	<p class="text-center text-primary">Written by Fanatics for Fanatics.</p>
 </div>
-<% end %>
+<div class="row justify-content-center">
+	<div class="col-6">
+	<h3 class="text-center">Sign in</h3>
+
+	<%= form_for(:session, url: sign_in_path) do |f| %>
+		<div class="form-group">
+			<%= f.text_field :username, autofocus: true, placeholder: "Enter a username", class: "form-control"  %>
 		</div>
+
+		<div class="actions">
+			<%= f.submit 'Login', class: "btn btn-primary" %>
+			<p>
+				<small><em>Don't have an account?</em></small> <%= link_to 'Sign Up', new_user_path %>
+			</p>
+		</div>
+	<% end %>
+
 	</div>
+</div>
 </div>
