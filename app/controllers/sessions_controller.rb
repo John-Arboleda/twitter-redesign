@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
-  #def new
-  #end
+  # def new
+  # end
 
   def create
-      @user = User.find_by(username: params[:session][:username])
+    @user = User.find_by(username: params[:session][:username])
 
     if @user
       session[:username] = @user.username
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-      session[:username] = nil
+    session[:username] = nil
     flash[:success] = 'You have successfully logged out'
     redirect_to sign_in_path
   end
