@@ -22,12 +22,12 @@ RSpec.feature 'Users', type: :feature do
   it 'follow a user which has profile page open' do
     visit 'users/maria'
     expect(page).to have_text('0 Following')
-    # find('a.follow_me').click
-    # expect(page).to have_text('1 Following')
+    find('a.follow_me').click
+    expect(page).to have_text('1 Following')
   end
 
-  # it 'should logout' do
-  # 	click_link 'Sign out'
-  # 	expect(page).to have_text('Written by Fanatics for Fanatics')
-  # end
+  it 'should logout' do
+  	click_link 'Sign out'
+  	expect(page).to have_text('Written by Fanatics for Fanatics')
+  end
 end
