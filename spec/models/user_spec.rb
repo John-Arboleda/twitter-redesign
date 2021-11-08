@@ -15,10 +15,10 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Validation' do
-  	it { should validate_length_of(:username).is_at_least(3) }
-  	it { should_not validate_length_of(:username).is_at_least(2)}
-  	it { should validate_length_of(:fullname).is_at_most(30) }
-  	it { should_not validate_length_of(:fullname).is_at_least(3) }
-  	it { should validate_uniqueness_of(:username) }
+    it { should validate_length_of(:username).is_at_least(3) }
+    it { should_not validate_length_of(:username).is_at_least(2) }
+    it { should validate_length_of(:fullname).is_at_most(30) }
+    it { should_not validate_length_of(:fullname).is_at_least(3) }
+    it { should validate_uniqueness_of(:username) }
   end
 end
