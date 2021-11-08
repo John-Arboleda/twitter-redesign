@@ -27,7 +27,7 @@ RSpec.feature 'Users', type: :feature do
   end
 
   it 'should logout' do
-  	click_link 'Sign out'
-  	expect(page).to have_text('Written by Fanatics for Fanatics')
+    click_link 'Sign out'
+    expect(page).to have_text('Written by Fanatics for Fanatics')
   end
 end

@@ -1,11 +1,24 @@
 # Twitter Redesign
 
-This is the Capstone Project for the Ruby on Rails module of the Microverse program. A Twitter clone app 
+This is the Capstone Project for the Ruby on Rails module of the Microverse program. A Twitter clone app where users can tweet, comment on those tweets, and follow other users. Click [here](https://www.notion.so/Twitter-redesign-f8a8d48453d54d1a949bb0ceab4c8718) to see the complete guilines of this project.
+
+### Project: Media Fanatics
+
+Media Fanatics is a social network made to share, praise, critique, any kind of media: videos, movies, games. Content created for fans by fans. Check out [this](https://www.loom.com/share/5b53fc8f6b45476d8ba3cf73eed13ba6) brief explanation the project.
+
+**Homepage view**
+
+![homepage](app/assets/images/home_page.PNG)
+
+**Homepage view**
+
+![userpage](app/assets/images/userpage.PNG)
 
 ## Built With
 
 - Ruby v2.7.4
 - Ruby on Rails v6.1.4
+- Bootstrap 4.6
 
 ## Live Demo
 
@@ -14,7 +27,7 @@ This is the Capstone Project for the Ruby on Rails module of the Microverse prog
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
@@ -24,7 +37,7 @@ Postgres: >=9.5
 
 ### Setup
 
-Instal gems with:
+Install gems with:
 
 ```
 bundle install
