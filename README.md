@@ -10,7 +10,7 @@ Media Fanatics is a social network made to share, praise, critique, any kind of 
 
 ![homepage](app/assets/images/home_page.PNG)
 
-**Homepage view**
+**Userpage view**
 
 ![userpage](app/assets/images/userpage.PNG)
 
@@ -73,7 +73,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    RSpec --format documentation
 ```
 
 ## Authors
