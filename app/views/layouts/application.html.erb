@@ -16,7 +16,8 @@
 </head>
 
 <body class="bg-light">
-  
+  <p class="flash bg-success"><%= flash.notice %></p>
+  <p class="flash bg-success"><%= flash.alert %></p>
   <div class="row no-gutters">
     <div class="col-2">
       <%= after_login('shared/left') %>
@@ -36,7 +37,6 @@
     </div>
   </div>
 
-  <p class="flash bg-success"><%= flash.notice %></p>
-  <p class="flash bg-success"><%= flash.alert %></p>
+
 </body>
 </html>
