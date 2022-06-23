@@ -1,0 +1,39 @@
+<div class="border-left px-1 position-fixed follow-content py-4">
+<div class="text-center mb-2">
+  <%= follow_me(@user, 'shared/follow') %>
+  <%= profile_pic(@user, 'tweet-pic')%>
+
+  <div class="user-info">
+    <h5 class="mt-2"><%= link_to @user.fullname, profile_path(@user.username), class: "user-name-p" %> 
+      <br>
+      <small class="text-gray">@<%= @user.username %></small>
+    </h5>
+    <div class="stats border-top border-bottom pt-2 d-flex flex-wrap justify-content-around">
+      <h5><%= @user.opinions.count %> <br><small>Tweets</small></h5>
+      <h5><%= @user.follows.count %> <br><small>Following</small></h5>
+      <h5><%= @user.followers.count %><br><small>Followers</small></h5>
+    </div>
+  </div>
+</div>
+
+<h6 class="border-bottom py-3 pl-2">FOLLOWED BY</h6>
+
+<div>
+<% @user.followers.each do |follower| %>
+    <div class="d-flex flex-row flex-wrap align-items-center mb-2 mt-2 who-to-follow justify-content-around">
+      <div class="author">
+        <%= profile_pic(follower, 'tweet-pic')%>
+      </div>
+      <div>
+        <h6><strong>
+          <%= link_to follower.fullname, profile_path(follower.username), class: "text-dark" %></strong><br>
+          <small class="text-gray">@<%= follower.username %></small>
+        </h6>
+        <%= follow_me(@user, 'shared/follow') %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
+
+</div>
